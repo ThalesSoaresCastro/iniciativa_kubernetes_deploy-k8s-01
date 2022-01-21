@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-conversor-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-conversor
+  template:
+    metadata:
+      labels:
+        app: api-conversor
+    spec:
+      containers:
+        - name: api-conversor
+          image: typhanael/conversor-temperatura:v1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+
+
+
+
