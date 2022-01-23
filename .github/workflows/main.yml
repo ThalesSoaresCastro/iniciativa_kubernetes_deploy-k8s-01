@@ -22,6 +22,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: |
-            typhanael/conversor-temperatura:latest
+            #typhanael/conversor-temperatura:latest
             typhanael/conversor-temperatura:${{ github.run_number }}
             
